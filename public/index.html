@@ -31,7 +31,7 @@ limitations under the License. -->
       <section id="instructions" data-disabled>
         <h2>How to install:</h2>        
         <details>
-          <summary>Install via Policy (macOS)</summary>
+          <summary>Install via Policy (Chrome - macOS)</summary>
           <ol>
             <li>Download and open the policy file: <a href="/policy.mobileconfig">policy.mobileconfig</a></li>
             <li>Install the policy at Settings > Profiles from the menu bar</li>
@@ -41,7 +41,7 @@ limitations under the License. -->
           <a href="/extension.crx"><button>Install Extension</button></a>
         </details>
         <details>
-          <summary>Install via Policy (Windows)</summary>
+          <summary>Install via Policy (Chrome - Windows)</summary>
           <p><em>Note: The following commands may overwrite existing policies.</em></p>
           <ol>
             <li>Open Command Prompt as an administrator.</li>
@@ -56,13 +56,26 @@ limitations under the License. -->
           <p><code>reg delete HKLM\SOFTWARE\Policies\Google\Chrome\ExtensionInstallSources /f</code></p>
         </details>
         <details>
-          <summary>Install manually</summary>
+          <summary>Install manually (Chrome)</summary>
           <p>Linux: This is supported in all versions of Chrome.</p>
           <p>Mac and Windows: This method is only supported in <a href="https://www.chromium.org/getting-involved/download-chromium/" target="_blank">Chromium</a>.</p>
           <ol>
             <li>Download the extension: <a id="download" href="javascript:void">Download</a></li>
             <li>Drag and drop the file on to the chrome://extensions page.</li>
           </ol>
+        </details>
+        <details>
+          <summary>Install via config (Firefox Nightly)</summary>
+          <p>Download and install <a
+              href="https://www.mozilla.org/en-CA/firefox/channel/desktop/#:~:text=is%20shared.-,Nightly,-Get%20a%20sneak">Firefox
+              Nightly</a></p>
+          <p>add the following values in <span class="inline-code">about:config</span></p>
+          <ol>
+            <li><span class="inline-code">xpinstall.signatures.required</span>: <span class="inline-code">false</span></li>
+            <li><span class="inline-code">extensions.checkUpdateSecurity</span>: <span class="inline-code">false</span></li>
+            <li><span class="inline-code">extensions.install.requireSecureOrigin</span>: <span class="inline-code">false</span></li>
+          </ol>
+          <a href="/extension.xpi"><button>Install Extension</button></a>
         </details>
         <p><em>Hint: To update the extension, simply enable Developer Mode at chrome://extensions and press "Update" after dragging a new extension here. You must increase the version number for Chrome to update the extension.</em></p>
       </section>

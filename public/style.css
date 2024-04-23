@@ -98,3 +98,8 @@ section#uploader p {
   opacity: 0.8;
   margin-top: 20px;
 }
+
+.inline-code {
+  font-family: monospace;
+  background-color: #f0f0f0;
+}

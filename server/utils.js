@@ -71,6 +71,14 @@ module.exports.makeUploadHandler = function (unpack) {
 
     manifest.update_url = `http://${req.hostname}:${state.PORT}/updates.xml`;
 
+    // https://extensionworkshop.com/documentation/develop/test-permission-requests/
+    manifest.browser_specific_settings = {
+      "gecko": {
+        "update_url": `http://${req.hostname}:${state.PORT}/upgrades.json`,
+        "id": "test@addon.com"
+      }
+    }
+
     try {
       await writeFile("tmp/unpacked/manifest.json", JSON.stringify(manifest));
     } catch (e) {
@@ -97,6 +105,7 @@ module.exports.makeUploadHandler = function (unpack) {
 
     try {
       await writeFile("tmp/extension.crx", packed);
+      await writeFile("tmp/extension.xpi", packed);
     } catch (e) {
       return respondWithError(res, e, "Unable to write crx to disk.");
     }

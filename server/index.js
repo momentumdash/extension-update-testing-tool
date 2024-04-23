@@ -45,13 +45,25 @@ app.post(
 app.get(
   "/extension.crx",
   utils.requireExtensionMiddleware,
-  require("./routes/extension")
+  require("./routes/extensioncrx")
 );
 
 app.get(
   "/updates.xml",
   utils.requireExtensionMiddleware,
   require("./routes/updates")
+);
+
+app.get(
+  "/extension.xpi",
+  utils.requireExtensionMiddleware,
+  require("./routes/extensionxpi")
+);
+
+app.get(
+  "/upgrades.json",
+  utils.requireExtensionMiddleware,
+  require("./routes/upgrades")
 );
 
 app.get(

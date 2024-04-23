@@ -1,3 +1,8 @@
+# What's in this fork?
+Added endpoints and instructions for testing on Firefox Nightly
+
+---
+
 # Extension Update Testing Tool
 
 The Extension Update Testing Tool is a local extension update server that can be used for testing updates to Chrome Extensions during local development, including permission grants.
